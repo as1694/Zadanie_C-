@@ -1,0 +1,6 @@
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\bin\Debug\Zadanie_konsola.exe
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\bin\Debug\Zadanie_konsola.pdb
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\obj\Debug\Zadanie_konsola.csprojResolveAssemblyReference.cache
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\obj\Debug\Zadanie_konsola.csproj.CoreCompileInputs.cache
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\obj\Debug\Zadanie_konsola.exe
+D:\dokumenty\moje\cv\PGS\zad\Zadanie_konsola\Zadanie_konsola\obj\Debug\Zadanie_konsola.pdb
