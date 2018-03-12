@@ -7,56 +7,49 @@ namespace Zadanie_konsola
 {
     public class Data
     {
-        public String Name
-        {
-            get;
-            private set;
-        }
-
-        public String Surname
-        {
-            get;
-            private set;
-        }
-
-        public String Adress
-        {
-            get;
-            private set;
-        }
-
-        public String Phone
-        {
-            get;
-            private set;
-        }
+        String name;
+        String surname;
+        String adress;
+        String phone;
 
         public Data()
         {
-            Name = null;
-            Surname = null;
-            Adress = null;
-            Phone = null;
+            name = null;
+            surname = null;
+            adress = null;
+            phone = null;
         }
 
         public void Set(byte what, String value)
         {
             switch (what)
             {
-                case 1: Name = value; break;
-                case 2: Surname = value; break;
-                case 3: Adress = value; break;
-                case 4: Phone = value; break;
+                case 1: name = value; break;
+                case 2: surname = value; break;
+                case 3: adress = value; break;
+                case 4: phone = value; break;
                 default: Console.WriteLine("Błąd"); break;
+            }
+        }
+
+        public String Get(byte what)
+        {
+            switch (what)
+            {
+                case 1: return name;
+                case 2: return surname;
+                case 3: return adress;
+                case 4: return phone;
+                default: return null;
             }
         }
 
         public void Write()
         {
-            Console.WriteLine("Imię: " + Name);
-            Console.WriteLine("Nazwisko: " + Surname);
-            Console.WriteLine("Adres: " + Adress);
-            Console.WriteLine("Telefon: " + Phone);
+            Console.WriteLine("Imię: " + name);
+            Console.WriteLine("Nazwisko: " + surname);
+            Console.WriteLine("Adres: " + adress);
+            Console.WriteLine("Telefon: " + phone);
             Console.WriteLine();
         }
 

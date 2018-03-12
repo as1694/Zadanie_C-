@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+public enum What
+{
+    imię = 1, nazwisko = 2, adres = 3, telefon = 4
+};
+
 namespace Zadanie_konsola
 {
     class Program
@@ -14,70 +19,26 @@ namespace Zadanie_konsola
             byte counter = 1;
             char decission = 's';
             String value = null;
-            String what = null;
 
             while(counter<5)
             {
-                switch(counter)
+                if (data.Get(counter) == null || decission == 's' || decission == 'S')
                 {
-                    case 1:
-                        {
-                            what = "imie";
-                            if (data.Name == null || decission == 's' || decission == 'S')
-                            {
-                                data.Write();
-                                Console.WriteLine("Podaj imię:");
-                                value = Console.ReadLine();
-                                data.Set(counter, value);
-                            }
-                        } break;
-                    case 2:
-                        {
-                            what = "nazwisko";
-                            if (data.Surname == null || decission == 's' || decission == 'S')
-                            {
-                                data.Write();
-                                Console.WriteLine("Podaj nazwisko:");
-                                value = Console.ReadLine();
-                                data.Set(counter, value);
-                            }
-                        } break;
-                    case 3:
-                        {
-                            what = "adres";
-                            if (data.Adress == null || decission == 's' || decission == 'S')
-                            {
-                                data.Write();
-                                Console.WriteLine("Podaj adres:");
-                                value = Console.ReadLine();
-                                data.Set(counter, value);
-                            }
-                        } break;
-                    case 4:
-                        {
-                            what = "telefon";
-                            if (data.Phone == null || decission == 's' || decission == 'S')
-                            {
-                                data.Write();
-                                Console.WriteLine("Podaj telefon:");
-                                value = Console.ReadLine();
-                                data.Set(counter, value);
-                            }
-                        } break;
-
-                    default:
-                        Console.WriteLine("błąd");
-                        break;
+                    data.Write();
+                    Console.WriteLine("Podaj " + (What)counter + ":");
+                    value = Console.ReadLine();
+                    data.Set(counter, value);
                 }
+
                 Console.Clear();
                 data.Write();
 
                 if (counter==4)
-                    Console.WriteLine("Koniec (N)/ Wstecz (B)/ Zmień "+what+" (S)");
+                    Console.WriteLine("Koniec (N)/ Wstecz (B)/ Zmień "+(What)counter+" (S)");
                 else if (counter>1)
-                    Console.WriteLine("Dalej (N)/ Wstecz (B)/ Zmień " + what + " (S)");
+                    Console.WriteLine("Dalej (N)/ Wstecz (B)/ Zmień " + (What)counter + " (S)");
                 else
-                    Console.WriteLine("Dalej (N)/ Zmień " + what + " (S)");
+                    Console.WriteLine("Dalej (N)/ Zmień " + (What)counter + " (S)");
 
                 decission = Console.ReadKey().KeyChar;
                 if(decission == 's' || decission == 'S')
@@ -96,7 +57,7 @@ namespace Zadanie_konsola
             Console.WriteLine("Twoje dane:");
             Console.WriteLine();
             data.Write();
-            Console.Read();
+            decission = Console.ReadKey().KeyChar;
         }
     }
 }
