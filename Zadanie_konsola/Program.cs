@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public enum What
-{
-    imię = 1, nazwisko = 2, adres = 3, telefon = 4
-};
-
 namespace Zadanie_konsola
 {
+    public enum What
+    {
+        imię = 1, nazwisko = 2, adres = 3, telefon = 4
+    };
+
     class Program
     {
         static void Main(string[] args)
         {
             Data data = new Data();
-
             byte counter = 1;
             char decission = 's';
             String value = null;
@@ -34,11 +33,11 @@ namespace Zadanie_konsola
                 data.Write();
 
                 if (counter==4)
-                    Console.WriteLine("Koniec (N)/ Wstecz (B)/ Zmień "+(What)counter+" (S)");
+                    Console.WriteLine("Zmień "+(What)counter+ " (S)\nWstecz (B)\nKoniec (N)");
                 else if (counter>1)
-                    Console.WriteLine("Dalej (N)/ Wstecz (B)/ Zmień " + (What)counter + " (S)");
+                    Console.WriteLine("Zmień " + (What)counter + " (S)\nWstecz (B)\nDalej (N)");
                 else
-                    Console.WriteLine("Dalej (N)/ Zmień " + (What)counter + " (S)");
+                    Console.WriteLine("Zmień " + (What)counter + " (S)\nDalej (N)");
 
                 decission = Console.ReadKey().KeyChar;
                 if(decission == 's' || decission == 'S')
@@ -50,12 +49,10 @@ namespace Zadanie_konsola
                     counter--;
                 else if (decission == 'n' || decission == 'N')
                     counter++;
-               
 
                 Console.Clear();
             }
-            Console.WriteLine("Twoje dane:");
-            Console.WriteLine();
+            Console.WriteLine("Twoje dane:" + "\n");
             data.Write();
             decission = Console.ReadKey().KeyChar;
         }

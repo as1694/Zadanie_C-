@@ -49,8 +49,7 @@ namespace Zadanie_konsola
             Console.WriteLine("Imię: " + name);
             Console.WriteLine("Nazwisko: " + surname);
             Console.WriteLine("Adres: " + adress);
-            Console.WriteLine("Telefon: " + phone);
-            Console.WriteLine();
+            Console.WriteLine("Telefon: " + phone + "\n");
         }
 
     }
