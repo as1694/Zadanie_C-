@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Zadanie_konsola
 {
@@ -9,14 +6,14 @@ namespace Zadanie_konsola
     {
         String name;
         String surname;
-        String adress;
+        String address;
         String phone;
 
         public Data()
         {
             name = null;
             surname = null;
-            adress = null;
+            address = null;
             phone = null;
         }
 
@@ -26,7 +23,7 @@ namespace Zadanie_konsola
             {
                 case 1: name = value; break;
                 case 2: surname = value; break;
-                case 3: adress = value; break;
+                case 3: address = value; break;
                 case 4: phone = value; break;
                 default: Console.WriteLine("Błąd"); break;
             }
@@ -38,7 +35,7 @@ namespace Zadanie_konsola
             {
                 case 1: return name;
                 case 2: return surname;
-                case 3: return adress;
+                case 3: return address;
                 case 4: return phone;
                 default: return null;
             }
@@ -46,11 +43,10 @@ namespace Zadanie_konsola
 
         public void Write()
         {
-            Console.WriteLine("Imię: " + name);
-            Console.WriteLine("Nazwisko: " + surname);
-            Console.WriteLine("Adres: " + adress);
-            Console.WriteLine("Telefon: " + phone + "\n");
+            Console.WriteLine("Imię [ " + name+" ]");
+            Console.WriteLine("Nazwisko [ " + surname + " ]");
+            Console.WriteLine("Adres [ " + address + " ]");
+            Console.WriteLine("Telefon [ " + phone + " ]\n");
         }
-
     }
 }

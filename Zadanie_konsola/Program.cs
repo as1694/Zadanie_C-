@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Zadanie_konsola
 {
-    public enum What
+    enum What
     {
         imię = 1, nazwisko = 2, adres = 3, telefon = 4
     };
@@ -16,12 +13,12 @@ namespace Zadanie_konsola
         {
             Data data = new Data();
             byte counter = 1;
-            char decission = 's';
+            char decision = 's';
             String value = null;
 
             while(counter<5)
             {
-                if (data.Get(counter) == null || decission == 's' || decission == 'S')
+                if (data.Get(counter) == null || decision == 's' || decision == 'S')
                 {
                     data.Write();
                     Console.WriteLine("Podaj " + (What)counter + ":");
@@ -39,22 +36,24 @@ namespace Zadanie_konsola
                 else
                     Console.WriteLine("Zmień " + (What)counter + " (S)\nDalej (N)");
 
-                decission = Console.ReadKey().KeyChar;
-                if(decission == 's' || decission == 'S')
+                decision = Console.ReadKey().KeyChar;
+                if(decision == 's' || decision == 'S')
                 {
                     Console.Clear();
                     continue;
                 }
-                else if (counter > 1 && decission == 'b' || decission == 'B')
+                else if (counter > 1 && decision == 'b' || decision == 'B')
                     counter--;
-                else if (decission == 'n' || decission == 'N')
+                else if (decision == 'n' || decision == 'N')
                     counter++;
 
                 Console.Clear();
             }
+
             Console.WriteLine("Twoje dane:" + "\n");
             data.Write();
-            decission = Console.ReadKey().KeyChar;
+            Console.WriteLine("Naciśnij dowolny przycisk, by zakończyć.");
+            decision = Console.ReadKey().KeyChar;
         }
     }
 }
